@@ -24,19 +24,28 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        colorView.layer.cornerRadius = 10
+        setupViews()
         sliderActions()
     }
     
+    
     @IBAction func redSliderAction() {
         sliderActions()
+        setupViews()
+
     }
     
     @IBAction func greenSliderAction() {
         sliderActions()
+        setupViews()
+
     }
     
     @IBAction func blueSliderAction() {
         sliderActions()
+        setupViews()
+
     }
     
     private func sliderActions () {
@@ -49,6 +58,10 @@ final class ViewController: UIViewController {
             blue: CGFloat(blueSlider.value),
             alpha: 1
         )
+        
+    }
+    
+    private func setupViews () {
         hexView.text = String(
             format:"HEX: #%02x%02x%02x",
             Int(redSlider.value * 255),
@@ -62,6 +75,8 @@ final class ViewController: UIViewController {
             Int(blueSlider.value * 255)
         )
     }
-    
+            
 }
+
+
 
