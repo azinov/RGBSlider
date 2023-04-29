@@ -19,6 +19,22 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l5Q-Yz-4WQ">
                                 <rect key="frame" x="16" y="77" width="361" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uG-oA-MpN">
+                                        <rect key="frame" x="8" y="8" width="119" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uw8-Ff-FcN">
+                                        <rect key="frame" x="8" y="46" width="119" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2HK-xL-40M">
@@ -94,11 +110,13 @@
                     <connections>
                         <outlet property="blueSlider" destination="QkE-hn-K17" id="UG6-sH-cUR"/>
                         <outlet property="blueValue" destination="cjq-EG-PVY" id="x2b-FK-WeT"/>
-                        <outlet property="colorView" destination="l5Q-Yz-4WQ" id="3Lo-VS-cTg"/>
+                        <outlet property="colorView" destination="l5Q-Yz-4WQ" id="v4Z-7Y-0ET"/>
                         <outlet property="greenSlider" destination="KU2-05-XmI" id="3OC-9J-cTE"/>
                         <outlet property="greenValue" destination="VeS-m5-HCE" id="TE7-9T-WnA"/>
+                        <outlet property="hexView" destination="2uG-oA-MpN" id="Ck6-HK-9pj"/>
                         <outlet property="redSlider" destination="F8f-dd-Wnq" id="xJN-oo-TI7"/>
                         <outlet property="redValue" destination="duR-X5-ndU" id="yhS-Qn-qh0"/>
+                        <outlet property="rgbView" destination="uw8-Ff-FcN" id="eOX-Ii-Ilv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

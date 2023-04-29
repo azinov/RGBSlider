@@ -7,9 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
     @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var hexView: UILabel!
+    @IBOutlet weak var rgbView: UILabel!
+    
     @IBOutlet weak var redValue: UILabel!
     @IBOutlet weak var greenValue: UILabel!
     @IBOutlet weak var blueValue: UILabel!
@@ -18,10 +21,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sliderActions()
-        
     }
     
     @IBAction func redSliderAction() {
@@ -45,6 +48,18 @@ class ViewController: UIViewController {
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),
             alpha: 1
+        )
+        hexView.text = String(
+            format:"HEX: #%02x%02x%02x",
+            Int(redSlider.value * 255),
+            Int(greenSlider.value * 255),
+            Int(blueSlider.value * 255)
+        )
+        rgbView.text = String(
+            format:"RGB: %u %u %u",
+            Int(redSlider.value * 255),
+            Int(greenSlider.value * 255),
+            Int(blueSlider.value * 255)
         )
     }
     
