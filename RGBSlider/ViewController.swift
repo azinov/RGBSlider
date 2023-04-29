@@ -8,7 +8,8 @@
 import UIKit
 
 final class ViewController: UIViewController {
-
+    
+    //MARK: - IBOutlet
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var hexView: UILabel!
     @IBOutlet weak var rgbView: UILabel!
@@ -20,62 +21,56 @@ final class ViewController: UIViewController {
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 10
-        setupViews()
         sliderActions()
     }
-    
-    
+
+    //MARK: - IBAction
     @IBAction func redSliderAction() {
         sliderActions()
-        setupViews()
-
     }
     
     @IBAction func greenSliderAction() {
         sliderActions()
-        setupViews()
-
     }
     
     @IBAction func blueSliderAction() {
         sliderActions()
-        setupViews()
-
     }
     
+    //MARK: - Private Methods
     private func sliderActions () {
-        redValue.text = String(format: "%.2f", redSlider.value)
-        greenValue.text = String(format: "%.2f", greenSlider.value)
-        blueValue.text = String(format: "%.2f", blueSlider.value)
+        let red = redSlider.value
+        let green = greenSlider.value
+        let blue = blueSlider.value
+        
+        redValue.text = String(format: "%.2f", red)
+        greenValue.text = String(format: "%.2f", green)
+        blueValue.text = String(format: "%.2f", blue)
         colorView.backgroundColor = UIColor(
-            red: CGFloat(redSlider.value),
-            green: CGFloat(greenSlider.value),
-            blue: CGFloat(blueSlider.value),
+            red: CGFloat(red),
+            green: CGFloat(green),
+            blue: CGFloat(blue),
             alpha: 1
+        )
+        hexView.text = String(
+            format:"HEX: #%02x%02x%02x", //x - convert to hex value
+            Int(red * 255),
+            Int(green * 255),
+            Int(blue * 255)
+        )
+        rgbView.text = String(
+            format:"RGB: %u %u %u", //u - convert to Int
+            Int(red * 255),
+            Int(green * 255),
+            Int(blue * 255)
         )
         
     }
     
-    private func setupViews () {
-        hexView.text = String(
-            format:"HEX: #%02x%02x%02x",
-            Int(redSlider.value * 255),
-            Int(greenSlider.value * 255),
-            Int(blueSlider.value * 255)
-        )
-        rgbView.text = String(
-            format:"RGB: %u %u %u",
-            Int(redSlider.value * 255),
-            Int(greenSlider.value * 255),
-            Int(blueSlider.value * 255)
-        )
-    }
-            
 }
 
 
