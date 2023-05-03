@@ -25,24 +25,11 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         colorView.layer.cornerRadius = 10
-        sliderActions()
+//        sliderActions()
     }
 
     //MARK: - IBAction
-    @IBAction func redSliderAction() {
-        sliderActions()
-    }
-    
-    @IBAction func greenSliderAction() {
-        sliderActions()
-    }
-    
-    @IBAction func blueSliderAction() {
-        sliderActions()
-    }
-    
-    //MARK: - Private Methods
-    private func sliderActions () {
+    @IBAction func sliderAction() {
         let red = redSlider.value
         let green = greenSlider.value
         let blue = blueSlider.value
@@ -63,14 +50,14 @@ final class ViewController: UIViewController {
             Int(blue * 255)
         )
         rgbView.text = String(
-            format:"RGB: %u %u %u", //u - convert to Int
+            format:"RGB: %d %d %d", //d - convert to Int
             Int(red * 255),
             Int(green * 255),
             Int(blue * 255)
         )
         
     }
-    
+              
 }
 
 
