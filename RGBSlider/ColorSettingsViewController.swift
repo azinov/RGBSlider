@@ -54,7 +54,6 @@ final class ColorSettingsViewController: UIViewController {
         
     override func viewWillDisappear(_ animated: Bool) {
         backgroundColorChanged?.colorDelegate(colorRGB: backgroundColor)
-        
     }
 
        
@@ -80,6 +79,8 @@ final class ColorSettingsViewController: UIViewController {
             alpha: 1
         )
         
+        backgroundColor = colorView.backgroundColor!
+        
         hexLabel.text = String(
             format:"HEX: #%02x%02x%02x", //x - convert to hex value
             Int(red * 255),
@@ -94,10 +95,7 @@ final class ColorSettingsViewController: UIViewController {
             Int(blue * 255)
         )
         
-//        print("red: \(backgroundColor.rgba.red), green: \(backgroundColor.rgba.green), blue: \(backgroundColor.rgba.blue)")
-//        print(backgroundColor)
-
-        
+       
     }
 
        
