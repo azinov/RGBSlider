@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hhu-ZD-f9T">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,10 +9,44 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
+        <scene sceneID="KCA-8d-FbY">
+            <objects>
+                <viewController id="Hhu-ZD-f9T" customClass="MainViewController" customModule="RGBSlider" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yb3-Y1-K3W" customClass="Main">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l85-Bq-A6n">
+                                <rect key="frame" x="0.0" y="16" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="VTA-WJ-qtD">
+                                        <barButtonItem key="rightBarButtonItem" image="paintpalette" catalog="system" style="plain" id="wEG-BP-2bm">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="ua8-kZ-8cr"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gDO-lI-wUL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="l85-Bq-A6n" firstAttribute="leading" secondItem="gDO-lI-wUL" secondAttribute="leading" id="08F-P9-H82"/>
+                            <constraint firstItem="l85-Bq-A6n" firstAttribute="centerX" secondItem="Yb3-Y1-K3W" secondAttribute="centerX" id="r82-04-Awh"/>
+                            <constraint firstItem="l85-Bq-A6n" firstAttribute="top" secondItem="gDO-lI-wUL" secondAttribute="top" constant="16" id="w9n-BT-h9K"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mjq-eE-Ws9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-979" y="-29"/>
+        </scene>
+        <!--Color Settings View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RGBSlider" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ColorSettingsViewController" customModule="RGBSlider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,21 +128,21 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="n2x-hG-6O5">
                                         <rect key="frame" x="115.5" y="0.0" width="172.5" height="106.5"/>
                                         <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="F8f-dd-Wnq">
+                                            <slider opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="F8f-dd-Wnq">
                                                 <rect key="frame" x="-2" y="0.0" width="176.5" height="31.5"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                                 <connections>
                                                     <action selector="sliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="lMr-6M-dUM"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="KU2-05-XmI">
+                                            <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="KU2-05-XmI">
                                                 <rect key="frame" x="-2" y="38.5" width="176.5" height="31"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                                 <connections>
                                                     <action selector="sliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="1Rg-o0-Ffl"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QkE-hn-K17">
+                                            <slider opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="QkE-hn-K17">
                                                 <rect key="frame" x="-2" y="76.5" width="176.5" height="31"/>
                                                 <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                                 <connections>
@@ -153,6 +187,15 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="57" id="3Lt-ty-xy9"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7j-1V-yrd">
+                                <rect key="frame" x="123" y="465" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="I2O-nP-3Oh" kind="unwind" unwindAction="unwindToMain:" id="Sqg-Tr-8xF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
@@ -169,24 +212,30 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7oZ-ye-ykN" secondAttribute="trailing" constant="16" id="ntm-EO-zmU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ZD0-Yn-1Ev"/>
                     <connections>
                         <outlet property="blueSlider" destination="QkE-hn-K17" id="UG6-sH-cUR"/>
                         <outlet property="blueValue" destination="cjq-EG-PVY" id="x2b-FK-WeT"/>
                         <outlet property="colorView" destination="l5Q-Yz-4WQ" id="v4Z-7Y-0ET"/>
                         <outlet property="greenSlider" destination="KU2-05-XmI" id="3OC-9J-cTE"/>
                         <outlet property="greenValue" destination="VeS-m5-HCE" id="TE7-9T-WnA"/>
-                        <outlet property="hexView" destination="2uG-oA-MpN" id="Ck6-HK-9pj"/>
+                        <outlet property="hexLabel" destination="2uG-oA-MpN" id="Ck6-HK-9pj"/>
                         <outlet property="redSlider" destination="F8f-dd-Wnq" id="MNQ-iJ-exk"/>
                         <outlet property="redValue" destination="duR-X5-ndU" id="yhS-Qn-qh0"/>
-                        <outlet property="rgbView" destination="uw8-Ff-FcN" id="eOX-Ii-Ilv"/>
+                        <outlet property="rgbLabel" destination="uw8-Ff-FcN" id="eOX-Ii-Ilv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="I2O-nP-3Oh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-139.69465648854961" y="-28.169014084507044"/>
         </scene>
     </scenes>
     <resources>
+        <image name="paintpalette" catalog="system" width="128" height="105"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
